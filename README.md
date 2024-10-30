@@ -27,7 +27,7 @@ Isso iniciará o front-end e ele estará acessível em http://localhost.
 
 Para iniciar o container do PostgreSQL, execute o seguinte comando:
 
-Copiar
+
 docker run --name postgres-container -d -e POSTGRES_PASSWORD=123 -e POSTGRES_DB=proposta_db -p 5432:5432 postgres
 
 Isso criará um banco de dados chamado proposta_db com a senha 123. O banco de dados estará acessível na porta 5432.
