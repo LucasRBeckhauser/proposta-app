@@ -1,5 +1,4 @@
 package com.beckhauser.proposta_app.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
