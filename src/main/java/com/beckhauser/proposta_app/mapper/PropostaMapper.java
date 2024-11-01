@@ -1,6 +1,7 @@
 package com.beckhauser.proposta_app.mapper;
 
 import com.beckhauser.proposta_app.dto.PropostaRequestDto;
+import com.beckhauser.proposta_app.dto.PropostaResponseDto;
 import com.beckhauser.proposta_app.model.Proposta;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -21,4 +22,13 @@ public interface PropostaMapper {
     @Mapping(target = "id", ignore = true)
 
     Proposta convertDtoToProposta (PropostaRequestDto requestDto);
+
+
+    @Mapping(target = "nome", source = "usuario.nome")
+    @Mapping(target = "sobrenome", source = "usuario.sobrenome")
+    @Mapping(target = "cpf", source = "usuario.cpf")
+    @Mapping(target = "telefone", source = "usuario.telefone")
+    @Mapping(target = "renda", source = "usuario.renda")
+
+    PropostaResponseDto convertEntityToDto (Proposta proposta);
 }
