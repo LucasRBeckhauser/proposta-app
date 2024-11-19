@@ -21,6 +21,9 @@ PropostaMapper INSTANCE = Mappers.getMapper(PropostaMapper.class);
     @Mapping(target = "integrada", ignore = true)
     @Mapping(target = "observacao", ignore = true)
     @Mapping(target = "id", ignore = true)
+    //@Mapping(target = "valorPagamento", ignore = true)
+
+
 
     Proposta convertDtoToProposta (PropostaRequestDto requestDto);
 
@@ -30,6 +33,5 @@ PropostaMapper INSTANCE = Mappers.getMapper(PropostaMapper.class);
     @Mapping(target = "cpf", source = "usuario.cpf")
     @Mapping(target = "telefone", source = "usuario.telefone")
     @Mapping(target = "renda", source = "usuario.renda")
-
     PropostaResponseDto convertEntityToDto (Proposta proposta);
 }

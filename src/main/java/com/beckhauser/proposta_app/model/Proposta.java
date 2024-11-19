@@ -1,5 +1,6 @@
 package com.beckhauser.proposta_app.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -22,7 +23,7 @@ public class Proposta extends EntityId {
     private boolean integrada;
     private String observacao;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
