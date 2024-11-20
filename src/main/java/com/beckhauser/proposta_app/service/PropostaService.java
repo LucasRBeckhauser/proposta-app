@@ -24,7 +24,6 @@ public class PropostaService {
     }
 
     public List<PropostaResponseDto> obterProposta() {
-        propostaRepository.findAll();
-        return null;
+        return PropostaMapperInterface.INSTANCE.convertListEntityToListDto(propostaRepository.findAll());
     }
 }
