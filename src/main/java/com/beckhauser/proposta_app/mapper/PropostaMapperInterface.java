@@ -7,10 +7,12 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
-public interface PropostaMapper {
+import java.util.List;
 
-PropostaMapper INSTANCE = Mappers.getMapper(PropostaMapper.class);
+@Mapper
+public interface PropostaMapperInterface {
+
+PropostaMapperInterface INSTANCE = Mappers.getMapper(PropostaMapperInterface.class);
 
     @Mapping(target = "usuario.nome", source = "nome")
     @Mapping(target = "usuario.sobrenome", source = "sobrenome")
@@ -21,7 +23,6 @@ PropostaMapper INSTANCE = Mappers.getMapper(PropostaMapper.class);
     @Mapping(target = "integrada", ignore = true)
     @Mapping(target = "observacao", ignore = true)
     @Mapping(target = "id", ignore = true)
-    //@Mapping(target = "valorPagamento", ignore = true)
 
 
 
@@ -34,4 +35,7 @@ PropostaMapper INSTANCE = Mappers.getMapper(PropostaMapper.class);
     @Mapping(target = "telefone", source = "usuario.telefone")
     @Mapping(target = "renda", source = "usuario.renda")
     PropostaResponseDto convertEntityToDto (Proposta proposta);
+
+
+ List<PropostaResponseDto> convertListEntityToListDto (Iterable <Proposta> propostas);
 }

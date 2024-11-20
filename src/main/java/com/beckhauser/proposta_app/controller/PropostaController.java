@@ -5,11 +5,10 @@ import com.beckhauser.proposta_app.dto.PropostaResponseDto;
 import com.beckhauser.proposta_app.service.PropostaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/propostas")
@@ -28,4 +27,12 @@ public class PropostaController {
                 .body(response);
 
     }
+
+    @GetMapping
+    public ResponseEntity <List<PropostaResponseDto>>  obterProposta() {
+        propostaService.obterProposta();
+        return null;
+    }
+
+
 }
