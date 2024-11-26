@@ -6,6 +6,7 @@ Este projeto é uma aplicação baseada em microsserviços, onde a parte front-e
 
 - Docker
 - PostgreSQL
+- RabbitMQ
 - Java/Spring Boot (ou outra tecnologia de back-end)
 - [Outras tecnologias que você está utilizando]
 
@@ -41,9 +42,26 @@ Certifique-se de que sua aplicação back-end está configurada para se conectar
     Usuário: postgres (usuário padrão)
     Senha: 123
 
-Uso
+### 3. Executando o Container do RabbitMQ
 
-Após iniciar os containers, você pode acessar a aplicação através do endereço http://localhost.
-Endpoints
+Para iniciar o container do RabbitMQ com a interface de gerenciamento, execute o seguinte comando:
 
-Descreva aqui os endpoints disponíveis na sua API, se aplicável.
+docker run -d -p 5672:5672 -p 15672:15672 --name my-rabbit rabbitmq:3-management
+
+Acessando a Interface de Gerenciamento
+
+Após iniciar o container, você pode acessar a interface de gerenciamento do RabbitMQ através do seguinte link:
+
+    http://localhost:15672
+
+As credenciais padrão para login são:
+
+    Usuário: guest
+    Senha: guest
+
+Observações
+
+    A porta 5672 é utilizada para comunicação com o RabbitMQ.
+    A porta 15672 é utilizada para a interface de gerenciamento.
+
+
