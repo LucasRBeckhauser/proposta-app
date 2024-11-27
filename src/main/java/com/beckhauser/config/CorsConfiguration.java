@@ -1,4 +1,4 @@
-package com.beckhauser.proposta_app.mapper;
+package com.beckhauser.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
